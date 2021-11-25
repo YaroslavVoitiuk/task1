@@ -5,14 +5,24 @@
     <title>books</title>
 </head>
 <body>
-<div>All books</div>
-<br/>
+<div><b>All books</b></div>
 <hr/>
 <div th:each="book : ${books}">
     <a th:text="${'bookname: ' + book.getBookName() + ' availability:  ' + book.getAvailability()}">book</a>
 </div>
-<form action="/books/unBooks">
-    <button>Show unavailable books</button>
+<hr/>
+<div><b>Unavailable books</b></div>
+<br/>
+<div th:each="book : ${unBooks}">
+    <a th:text="${book.getBookName()}">book</a>
+</div>
+<br/>
+<hr/>
+<!--<form action="/books/unBooks">-->
+<!--    <button>Show unavailable books</button>-->
+<!--</form>-->
+<form action="/books/new">
+    <button>create new book</button>
 </form>
 
 </body>

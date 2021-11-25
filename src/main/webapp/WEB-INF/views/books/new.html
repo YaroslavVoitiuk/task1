@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>New book</title>
@@ -11,10 +11,11 @@
  <form th:method="POST" th:action="@{/books}" th:object="${book}">
      <label for="bookName">Enter name: </label>
      <input type="text" th:field="*{bookName}" id="bookName"/>
+     <div th:if="${#fields.hasErrors('bookName')}" th:errors="*{bookName}">Name error</div>
      <br/>
      <input type="submit" value="Submit!"/>
  </form>
-<form action="/books/unBooks">
+<form action="/books">
     <button>back</button>
 </form>
 </body>

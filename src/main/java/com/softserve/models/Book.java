@@ -1,8 +1,14 @@
 package com.softserve.models;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
+
 public class Book {
 
+    @NotEmpty(message = "This field can`t be empty")
+    @Size(min = 3, max = 20, message = "name should be between 3 and 20 characters")
     private String bookName;
+
     private boolean availability;
 
     public Book(){}
@@ -11,6 +17,8 @@ public class Book {
         return bookName;
     }
 
+    @NotEmpty(message = "This field can`t be empty")
+    @Size(min = 3, max = 20, message = "name should be between 3 and 20 characters")
     public void setBookName(String bookName) {
         this.bookName = bookName;
     }
