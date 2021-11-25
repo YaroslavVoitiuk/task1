@@ -6,11 +6,16 @@
 </head>
 <body>
 <div>Add new book</div>
+<br/>
+<hr/>
  <form th:method="POST" th:action="@{/books}" th:object="${book}">
      <label for="bookName">Enter name: </label>
      <input type="text" th:field="*{bookName}" id="bookName"/>
      <br/>
      <input type="submit" value="Submit!"/>
  </form>
+<form action="/books/unBooks">
+    <button>back</button>
+</form>
 </body>
 </html>

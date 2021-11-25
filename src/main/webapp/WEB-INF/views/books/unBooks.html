@@ -6,9 +6,14 @@
 </head>
 <body>
 <div>Unavailable books</div>
+<br/>
+<hr/>
 <div th:each="book : ${unbooks}">
     <a th:text="${book.getBookName()}">book</a>
 </div>
+<form action="/books">
+    <button>back</button>
+</form>
 
 
 </body>
