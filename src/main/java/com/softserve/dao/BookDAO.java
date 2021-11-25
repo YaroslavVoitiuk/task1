@@ -58,7 +58,7 @@ public class BookDAO {
 
         try {
             Statement statement = connection.createStatement();
-            String SQL = "SELECT * FROM books WHERE availability false ";
+            String SQL = "SELECT * FROM books WHERE availability=false ";
             ResultSet resultSet = statement.executeQuery(SQL);
 
             while (resultSet.next()){

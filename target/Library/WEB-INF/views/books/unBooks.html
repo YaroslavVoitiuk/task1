@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en"xmlns:th="http://www.thymeleaf.org">
+<html lang="en"xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>books</title>
 </head>
 <body>
-<div th:each="book : ${books}">
+<div>Unavailable books</div>
+<div th:each="book : ${unbooks}">
     <a th:text="${book.getBookName()}">book</a>
 </div>
+
+
 </body>
 </html>
